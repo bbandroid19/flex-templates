@@ -21,6 +21,6 @@ spec:
       config:
         exposeHeaders: true
         rateLimits:
-          - maximumRequests: 3
+          - maximumRequests: 1
             timePeriodInMilliseconds: 6000
         keySelector: #[attributes.queryParams['identifier']]
