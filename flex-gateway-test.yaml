@@ -6,7 +6,7 @@ spec:
   address: http://0.0.0.0:8000
   services:
     flex:
-      address: http://flex-gateway-test.us-e2.cloudhub.io/flex/api
+      address: http://flex-gateway-test.us-e2.cloudhub.io
       routes:
         - rules:
             - path: /flex/api(/.*)
