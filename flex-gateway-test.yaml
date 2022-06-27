@@ -9,18 +9,18 @@ spec:
       address: http://flex-gateway-test.us-e2.cloudhub.io
       routes:
         - rules:
-            - path: /api/products(/.*)
+            - {}
   policies:
     - policyRef:
         name: http-basic-authentication-flex
       config:
-        username: test
-        password: test
+        username: bas
+        password: bas
     - policyRef:
-        name: rate-limiting
+        name: rate-limiting-flex
       config:
         exposeHeaders: true
         rateLimits:
-          - maximumRequests: 1
+          - maximumRequests: 2
             timePeriodInMilliseconds: 600
         keySelector: #[attributes.queryParams['identifier']]
