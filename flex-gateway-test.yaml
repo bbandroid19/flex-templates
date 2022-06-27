@@ -5,22 +5,22 @@ metadata:
 spec:
   address: http://0.0.0.0:8000
   services:
-    flex:
+    flex-gateway-test:
       address: http://flex-gateway-test.us-e2.cloudhub.io
       routes:
         - rules:
-            - path: /flex/api(/.*)
+            - path: /api/products(/.*)
   policies:
     - policyRef:
         name: http-basic-authentication-flex
       config:
-        username: basil
-        password: basil
+        username: test
+        password: test
     - policyRef:
         name: rate-limiting
       config:
         exposeHeaders: true
         rateLimits:
           - maximumRequests: 1
-            timePeriodInMilliseconds: 6000
+            timePeriodInMilliseconds: 600
         keySelector: #[attributes.queryParams['identifier']]
