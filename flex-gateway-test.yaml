@@ -14,13 +14,13 @@ spec:
     - policyRef:
         name: http-basic-authentication-flex
       config:
-        username: bas
-        password: bas
+        username: test
+        password: test
     - policyRef:
         name: rate-limiting-flex
       config:
         exposeHeaders: true
         rateLimits:
           - maximumRequests: 2
-            timePeriodInMilliseconds: 600
+            timePeriodInMilliseconds: 6000
         keySelector: #[attributes.queryParams['identifier']]
